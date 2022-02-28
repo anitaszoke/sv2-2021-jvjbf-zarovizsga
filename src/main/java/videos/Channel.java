@@ -2,9 +2,9 @@ package videos;
 
 public class Channel {
 
-    private String channelName;
-    private int sub;
-    private int videoNumber;
+    private final String channelName;
+    private final int sub;
+    private final int videoNumber;
 
     public Channel(String channelName, int sub, int videoNumber) {
         this.channelName = channelName;
