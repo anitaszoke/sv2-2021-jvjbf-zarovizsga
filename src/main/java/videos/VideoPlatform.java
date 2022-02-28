@@ -31,6 +31,7 @@ public class VideoPlatform {
         }
     }
 
+
     private void parseLine(String line) {
         String[] fullLine = line.split(";");
         String channelName = fullLine[0];
@@ -38,5 +39,12 @@ public class VideoPlatform {
         int videoNumber = Integer.parseInt(fullLine[2]);
 
         channels.add(new Channel(channelName, sub, videoNumber));
+    }
+
+    public int calculateSumOfVideos() {
+        return channels.stream()
+                .mapToInt(Channel::getVideoNumber)
+                .sum();
+
     }
 }
